@@ -10,8 +10,11 @@
     "test": "jest"
   },
   "dependencies": {
+    "@foxitsoftware/react-native-foxitpdf": "^9.0.1",
+    "add": "^2.0.6",
     "react": "18.2.0",
-    "react-native": "0.74.1"
+    "react-native": "0.74.1",
+    "react-native-fs": "^2.20.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

@@ -17,5 +17,15 @@ buildscript {
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
     }
 }
+allprojects {
+    repositories {
+        flatDir {
+            dirs project(':foxitsoftware_react-native-foxitpdf').file("$rootDir/libs")
+        }
+        maven {
+            url 'https://pkgs.dev.azure.com/MicrosoftDeviceSDK/DuoSDK-Public/_packaging/Duo-SDK-Feed/maven/v1'
+        }
+    }
+}
 
 apply plugin: "com.facebook.react.rootproject"

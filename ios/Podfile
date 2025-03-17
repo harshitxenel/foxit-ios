@@ -13,15 +13,18 @@ if linkage != nil
   Pod::UI.puts "Configuring Pod with #{linkage}ally linked Frameworks".green
   use_frameworks! :linkage => linkage.to_sym
 end
+pod 'FoxitPDF', :path=>'./libs/FoxitPDF.podspec'
 
 target 'AwesomeProject4' do
   config = use_native_modules!
+  pod 'PDFNet', podspec: 'https://pdftron.com/downloads/ios/react-native/latest.podspec'
 
   use_react_native!(
     :path => config[:reactNativePath],
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
+  pod 'RNFS', :path => '../node_modules/react-native-fs'
 
   target 'AwesomeProject4Tests' do
     inherit! :complete
